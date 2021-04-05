@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#midas---task-3">MIDAS - Task 3</a>
+<ul>
+<li><a href="#index">Index</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#how-to-run">How To Run</a></li>
+<li><a href="#data-preview">Data Preview</a></li>
+<li><a href="#data-preprocessing-steps-and-data-cleaning">Data Preprocessing Steps and Data Cleaning</a></li>
+<li><a href="#vectorization-and-training">Vectorization and Training</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#results-and-discussion">Results and Discussion</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#possible-improvements">Possible Improvements</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="midas---task-3">MIDAS - Task 3</h1>
+<p><em>Prabhav Singh</em><br>
+<em>Netaji Subhas Institute of Technology</em><br>
+<em>Internship Task (MIDAS)</em></p>
+<h2 id="index">Index</h2>
+<ol>
+<li>Introduction</li>
+<li>How To Run</li>
+<li>Data Preview</li>
+<li>Data Preprocessing Steps and Data Cleaning</li>
+<li>Vectorization and Training</li>
+<li>Results and Discussion</li>
+<li>Possible Improvements</li>
+</ol>
+<h2 id="introduction">Introduction</h2>
+<p><strong>Task Statement:</strong> Use a given dataset to build a model to predict the category using description. Write code in python. Using Jupyter notebook is encouraged.</p>
+<p><strong>Solution Statement:</strong> A <em>TF-IDF based GRID-CV hypertuned SVC (Support Vector Classifier)</em> was used on the dataset to predict the cleaned product category in two different ways, achieving an accuracy of <strong>96% and 98%</strong> respectively.</p>
+<p><strong>Feature Selection:</strong> A concatenation of Product Name and Product Description.</p>
+<p><strong>Directory Structure:</strong></p>
+<pre><code>MIDAS_Submission_Prabhav
+└── Task 3
+	└── images
+		└── (Images Used for ReadMe)
+    └── MIDAS_Task3.ipynb
+    └── flipkart_com-ecommerce_sample.csv
+    └── Task3_ReadMe.md
+    └── requirements.txt
+</code></pre>
+<h2 id="how-to-run">How To Run</h2>
+<p><em>It is recommended to run the code on Google Colab for ease of use. The IPYNB file can be easily uploaded and run directly on Colab.</em></p>
+<p>Local Usage:</p>
+<ol>
+<li>Download the task folder.</li>
+<li>Do not change directory structure.</li>
+<li>Use the requirements.txt file to create a new conda environment.</li>
+<li>Run the ipynb file.</li>
+</ol>
+<h2 id="data-preview">Data Preview</h2>
+<ul>
+<li>Basic EDA was carried out on the dataset.  Data contained 15 columns and  20003 rows. For the code, only 3 columns were loaded -&gt; Product Name, Product Description, Product Category Tree. Others were ignored as they did not contain any data relevant to the prediction task.</li>
+</ul>
+<p>// Insert Image</p>
+<ul>
+<li>While loading dataset, rows with NaN type objects were not loaded and dropped. Product Name and Product Description were concatenated into a new feature column. Simple analysis after this, showed the following results:</li>
+</ul>
+<pre><code>1. Number of Rows - 20000
+2. Number of Columns - product_name, product_description, product_category_tree
+3. Unique Categories (Considering each tree as unique category) - 6466
+</code></pre>
+<ul>
+<li>Furthermore, the dataset was higly imbalanced due to the category tree being unique for most products.</li>
+</ul>
+<h2 id="data-preprocessing-steps-and-data-cleaning">Data Preprocessing Steps and Data Cleaning</h2>
+<h3 id="splitting-category-tree-into-levels-and-selecting-targets">Splitting Category Tree into Levels and Selecting Targets:</h3>
+<ul>
+<li>Each category tree was split into levels. The max number of levels for any tree was seen to be 8.</li>
+<li>On average, only the first three levels were seen to contain usefull data throughout the dataset.</li>
+</ul>
+<p>// Insert Image of split.</p>
+<ul>
+<li>Level 1 and Level 2 contained 265 and 218 unique categories repectively. A brief description of both levels is given below.
+<ul>
+<li><strong>Level 1</strong> - 265 unique categories. <strong>Mean frequency of each category was only 75. 98% of the data was concentrated in the first 25 categories.</strong></li>
+<li><strong>Level 2</strong> -  218 unique categories. <strong>Mean frequency of each category was only 91. 82% of the data was concentrated in the first 25 categories.</strong></li>
+</ul>
+</li>
+<li>Finally, Level 1 and Level 2 were concatenated to form a new product category target. This contained 436 unique categories but the advantage was that, the data was less imbalanced. <strong>84% of the data was in the top 30 categories of the data.</strong></li>
+</ul>
+<p>// Insert two graphs.</p>
+<p>Based on this analysis, two target (predicting variables) were selected. Training and testing was performed on both. These are listed below:</p>
+<pre><code> - Top 25 most frequent categories of Level 1 in the product category tree.
+ - Top 30 most frequent categories of Level 1 + Level 2 (Concatenation) in the product category tree.
+</code></pre>
+<h3 id="data-cleaning">Data Cleaning</h3>
+<p>The following are the steps for data cleaning:</p>
+<ul>
+<li>Removal of blank rows.</li>
+<li>Convert all text to lower case.</li>
+<li>Remove punctuations using NLTK.</li>
+<li>Tokenization of each description.</li>
+<li>Removal of stop words based on NLTK.</li>
+<li>Application of WordNet Lemmatizer based on three POS Tags:
+<ul>
+<li>Adjective</li>
+<li>Verb</li>
+<li>Adverb</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-setup-for-training-and-testing">Data Setup for Training and Testing</h3>
+<p>As described above, two datasets were created based. A snapshot of both datsets is shown below with their shape:</p>
+<p>// Dataset 1 (Level 1, Top 25) (19620, 3)<br>
+// Dataset 2 (Level 1 + Level 2, Top 30) (16996, 3)</p>
+<p>Furthermore, label encoder was used to make the labels in digitized format.</p>
+<h2 id="vectorization-and-training">Vectorization and Training</h2>
+<p>For training purposes, a <strong>TF-IDF vectorizer with 15000 features</strong> was used. The reasons for this are:</p>
+<ol>
+<li>A word2vec model was also tested. It provided ver similar scores but was discarded due to the large training time and computational expenses. The TF-IDF model performed commensurate to it, in a much less time.</li>
+<li>A deep learning based model was also tested (GLoVE). A similar trend to the above point was observed.</li>
+<li>Furthermore, since this is a relatively simpler predictive task, not involving need for context and also based majorly on words related to the category present in description, TF-IDF was a much better fit.</li>
+</ol>
+<h4 id="training">Training:</h4>
+<p>For training, both Naive Bayes and SVM based classifiers were tested. Finally, SVC was selected due to more options in hyperparameter tuning and better relative performance.<br>
+The same model was used for both datasets.<br>
+Grid CV (Cross Validation) was used for hyperparameter tuning. The details are given below:</p>
+<pre><code>Parameters Tuned:
+
+C: 1, 10
+Gamma: 0, 0.1
+Kernel: Linear, RBF
+
+Best Params Returned - {C:10, Gamma:0.1, RBF: 10}
+
+Time Taken To Apply GridCV - 17 minutes 26 seconds
+</code></pre>
+<h2 id="results-and-discussion">Results and Discussion</h2>
+<h4 id="summary-of-results">Summary of Results:</h4>
+
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Method Used</th>
+<th>Accuracy</th>
+<th>Unweighted Recall</th>
+<th>Weighted Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prediction on Top 25 Level 1 Categories</td>
+<td>TF-IDF with Hypertuned SVC</td>
+<td>98%</td>
+<td>91%</td>
+<td>98%</td>
+</tr>
+<tr>
+<td>Prediction on Top 30 Level 1 + 2 Categories</td>
+<td>TF-IDF with Hypertuned SVC</td>
+<td>98%</td>
+<td>96%</td>
+<td>98%</td>
+</tr>
+</tbody>
+</table><h4 id="heatmap-of--both-models">Heatmap of  Both Models:</h4>
+<p>// Insert two heatmaps</p>
+<h4 id="discussion">Discussion</h4>
+<p>We can see that themodel obtains excellent performance on both the dataset configurations. On the model predicting only on Level 1, the model does face some imbalance in classes causing the recall to be lower than what is expected.  The model tends to overfit on the first 10 categories.<br>
+On the other hand, the second model performs much better since the dataset reduces in imbalance when 2 levels are combined.</p>
+<h2 id="possible-improvements">Possible Improvements</h2>
+<ol>
+<li>Use of a biderectional deep learning model like ELMo for better encapsulation of lexical features.</li>
+<li>Use of oversampling to reduce imbalance in dataset.</li>
+<li>Topic Modelling to improve recognition of keywords.</li>
+</ol>
+
+    </div>
+  </div>
+</body>
+
+</html>
