@@ -115,7 +115,7 @@ As described above, two datasets were created based. A snapshot of both datsets 
 // Dataset 1 (Level 1, Top 25) (19620, 3)
 // Dataset 2 (Level 1 + Level 2, Top 30) (16996, 3)
 
-Furthermore, label encoder was used to make the labels in digitized format.
+Train - Test Split was 0.85 - 0.15. Furthermore, label encoder was used to make the labels in digitized format.
 
 ## Vectorization and Training
 
@@ -154,12 +154,19 @@ Time Taken To Apply GridCV - 17 minutes 26 seconds
 
 #### Heatmap of  Both Models:
 
-// Insert two heatmaps
+| ![cmap1.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/cmap1.png) | 
+|:--:| 
+| *Heatmap for predictions on top 25 categories (Level 1)* |
+
+| ![data1.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/cmap2.png) | 
+|:--:| 
+| *Heatmap for predictions on top 30 categories (Level 1 + Level 2)* |
 
 #### Discussion
 
 We can see that themodel obtains excellent performance on both the dataset configurations. On the model predicting only on Level 1, the model does face some imbalance in classes causing the recall to be lower than what is expected.  The model tends to overfit on the first 10 categories.
 On the other hand, the second model performs much better since the dataset reduces in imbalance when 2 levels are combined. 
+This is also seen clearly in heatmap 2, wherein, even with more classes, the model performs in a muchmore balanced manner.
 
 ## Possible Improvements
 
