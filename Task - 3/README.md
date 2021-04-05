@@ -81,7 +81,13 @@ Local Usage:
 	- **Level 2** -  218 unique categories. **Mean frequency of each category was only 91. 82% of the data was concentrated in the first 25 categories.**
 - Finally, Level 1 and Level 2 were concatenated to form a new product category target. This contained 436 unique categories but the advantage was that, the data was less imbalanced. **84% of the data was in the top 30 categories of the data.**
 
-// Insert two graphs.
+| ![data1.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/data1.png) | 
+|:--:| 
+| *Top 25 Frequent Categories in Level 1* |
+
+| ![data1.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/dtaa12.png) | 
+|:--:| 
+| *Top 30 Frequent Categories in Level 1 + Level 2* |
 
 Based on this analysis, two target (predicting variables) were selected. Training and testing was performed on both. These are listed below:
 
