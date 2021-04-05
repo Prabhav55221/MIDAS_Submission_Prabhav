@@ -55,7 +55,9 @@ Local Usage:
 
 - Basic EDA was carried out on the dataset.  Data contained 15 columns and  20003 rows. For the code, only 3 columns were loaded -> Product Name, Product Description, Product Category Tree. Others were ignored as they did not contain any data relevant to the prediction task.
 
-// Insert Image
+| ![original.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/original.png) | 
+|:--:| 
+| *Loaded Dataset* |
 
 - While loading dataset, rows with NaN type objects were not loaded and dropped. Product Name and Product Description were concatenated into a new feature column. Simple analysis after this, showed the following results:
 ```
@@ -74,7 +76,10 @@ Local Usage:
  - Each category tree was split into levels. The max number of levels for any tree was seen to be 8.
  - On average, only the first three levels were seen to contain usefull data throughout the dataset.
 
-// Insert Image of split.
+| ![split.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/split.png) | 
+|:--:| 
+| *Split of Levels* |
+
 
  - Level 1 and Level 2 contained 265 and 218 unique categories repectively. A brief description of both levels is given below.
 	- **Level 1** - 265 unique categories. **Mean frequency of each category was only 75. 98% of the data was concentrated in the first 25 categories.**
@@ -112,8 +117,11 @@ The following are the steps for data cleaning:
 
 As described above, two datasets were created based. A snapshot of both datsets is shown below with their shape:
 
-// Dataset 1 (Level 1, Top 25) (19620, 3)
-// Dataset 2 (Level 1 + Level 2, Top 30) (16996, 3)
+| ![l1l2.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/l1l2.png) | 
+|:--:| 
+| *Considered Levels* |
+- Dataset 1 (Level 1, Top 25) (19620, 3)
+- Dataset 2 (Level 1 + Level 2, Top 30) (16996, 3)
 
 Train - Test Split was 0.85 - 0.15. Furthermore, label encoder was used to make the labels in digitized format.
 
