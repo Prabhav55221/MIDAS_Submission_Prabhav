@@ -37,6 +37,10 @@ MIDAS_Submission_Prabhav
 
 Screenshot of directory after adding data folders:
 
+| ![main.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%202/static/main.png) | 
+|:--:| 
+| *Directory Structure with Data* |
+
 ## How to run
 
 #### Using Anaconda
