@@ -72,6 +72,10 @@ An overview of basic statistics of results is given below.
 
 The accuracy and loss graphs are shown below.
 
+| ![Part 1.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%202/static/Part%201.png) | 
+|:--:| 
+| *Accuracy and Loss Graphs - Part 1* |
+
 ### Part 2 Results
 
 A comparision based result is provide below, comparing both the pretrained and random model on MNIST test set:
@@ -82,6 +86,11 @@ A comparision based result is provide below, comparing both the pretrained and r
 | Random Init| 98% | 98% | **0.299** | **11 min 47 sec** |
 
 Accuracy and loss plots of both models are compared below. Further, heatmaps are also provided to observe class bias. Discussion is in  **[MIDAS_Task2_Explanation.pdf](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%202/MIDAS_Task2_Explanation.pdf "MIDAS_Task2_Explanation.pdf")**.
+
+| ![Part 2.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%202/static/Part%202.png) | 
+|:--:| 
+| *Heatmaps, Accuracy and Loss Graphs - Part 2* |
+
 
 ### Part 3 Results
 
