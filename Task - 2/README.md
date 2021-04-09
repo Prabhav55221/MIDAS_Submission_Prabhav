@@ -51,7 +51,8 @@ cd Task - 2
  - Download the Github Repo to your Drive and open a Colab Notebook in the root directory.
  - In the Colab Notebook, 
  ``` python
- !pip install requirements.txt
+!pip install requirements.txt
+!cd Task - 2
 ```
 - Run all notebooks normally.
 
