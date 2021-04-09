@@ -35,19 +35,27 @@ MIDAS_Submission_Prabhav
     └── MIDAS_Task3.ipynb
     └── flipkart_com-ecommerce_sample.csv
     └── Task3_ReadMe.md
-    └── requirements.txt
 ```
 
 
 ## How To Run
 
-_It is recommended to run the code on Google Colab for ease of use. The IPYNB file can be easily uploaded and run directly on Colab._
+#### Using Anaconda (Recommended)
+``` cmd
+cd MIDAS_Submission_Prabhav
+conda create --name <env> --file requirements.txt
+cd Task - 3
+```
 
-Local Usage:
-1. Download the task folder.
-2. Do not change directory structure.
-3. Use the requirements.txt file to create a new conda environment.
-4. Run the ipynb file.
+#### Using Colab
+
+ - Download the Github Repo to your Drive and open a Colab Notebook in the root directory.
+ - In the Colab Notebook, 
+ ``` python
+ !pip install requirements.txt
+ !cd Task - 3
+```
+- Run all notebooks normally.
 
 
 
