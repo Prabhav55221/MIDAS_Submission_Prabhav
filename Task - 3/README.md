@@ -5,6 +5,8 @@ _Prabhav Singh_
 _Netaji Subhas Institute of Technology_
 _Internship Task (MIDAS)_
 
+Please refer to this ![PDF document](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/MIDAS_Task3_Method.pdf) for the detailed methodology if the images don't load here.
+
 
 ## Index
 
