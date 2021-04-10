@@ -20,7 +20,7 @@ All files present are shown below. Please keep the directory structure the same.
 3. static/ containsimages used in ReadMe
 
 ```
-MIDAS_Submission_Prabhav
+MIDAS_Submission_Prabhav/Task - 2
 └── MIDAS_Task_2_Explanation.pdf
 └── static
 └── models
