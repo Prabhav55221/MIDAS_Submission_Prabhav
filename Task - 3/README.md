@@ -41,6 +41,7 @@ MIDAS_Submission_Prabhav
     └── MIDAS_Task3.ipynb
     └── flipkart_com-ecommerce_sample.csv
     └── Task3_ReadMe.md
+    └── MIDAS_Task3_Method.pdf
 ```
 
 
