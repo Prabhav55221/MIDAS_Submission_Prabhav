@@ -22,6 +22,10 @@ _Internship Task (MIDAS)_
 
 **Task Statement:** Use a given dataset to build a model to predict the category using description. Write code in python. Using Jupyter notebook is encouraged.
 
+| ![flow.png](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%203/images/flow.png) | 
+|:--:| 
+| *High Level Overview of Methodology* |
+
 **Solution Statement:** A _TF-IDF based GRID-CV hypertuned SVC (Support Vector Classifier)_ was used on the dataset to predict the cleaned product category in two different ways, achieving an accuracy of **96% and 98%** respectively.
 
 **Feature Selection:** A concatenation of Product Name and Product Description.
