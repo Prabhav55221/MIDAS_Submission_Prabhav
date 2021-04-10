@@ -8,6 +8,8 @@ Email Id - prabhavs.ic18@nsut.ac.in
 Tasks Submitted - Task 1, Task 2, Task 3
 ```
 
+**Note - PDFs containing description of all experiments, discussion of results etc are provided for all tasks. The ReadMe for all tasks only contains an overview of the same.**
+
 ## Root Directory Structure
 
 All tasks are present in this repository in the respective directories shown below. Few points to note are:
