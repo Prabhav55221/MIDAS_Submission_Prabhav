@@ -10,7 +10,7 @@ Email Id - prabhavs.ic18@nsut.ac.in
 
 ## Introduction
 
-Please go through the file - **[MIDAS_TASK1_Method.pdf](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%201/MIDAS_TASK1_Method.pdf"MIDAS_TASL1_Method.pdf") for a detailed explanation of all experiments performed.**
+Please go through the file - **[MIDAS_TASK1_Method.pdf](https://github.com/Prabhav55221/MIDAS_Submission_Prabhav/blob/master/Task%20-%201/MIDAS_TASK1_Method.pdf"MIDAS_TASK1_Method.pdf") for a detailed explanation of all experiments performed.**
 All models, training settings, results and references etc are defined there.
 
 ## Directory Structure
